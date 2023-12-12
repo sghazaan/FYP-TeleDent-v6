@@ -18,17 +18,19 @@ public class Controller : MonoBehaviour
 
         if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
         {
-            if (!isGrabbing)
-            {
-                TryGrabObject();
-            }
+            TryGrabObject();
+
+            // if (!isGrabbing)
+            // {
+            //     TryGrabObject();
+            // }
         }
         else
         {
-            if (isGrabbing)
-            {
-                ReleaseObject();
-            }
+            // if (isGrabbing)
+            // {
+            //     ReleaseObject();
+            // }
         }
     }
 
@@ -37,10 +39,10 @@ public class Controller : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            if (hit.collider.CompareTag("Interactable"))
-            {
-                GrabObject(hit.collider.gameObject);
-            }
+            // if (hit.collider.CompareTag("Interactable"))
+            // {
+            //     GrabObject(hit.collider.gameObject);
+            // }
 
             if (hit.collider.CompareTag("Tartar"))
             {
@@ -49,26 +51,26 @@ public class Controller : MonoBehaviour
         }
     }
 
-    void GrabObject(GameObject obj)
-    {
-        grabbedObject = obj;
-        grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-        grabbedObject.transform.SetParent(transform);
+    // void GrabObject(GameObject obj)
+    // {
+    //     grabbedObject = obj;
+    //     grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
+    //     grabbedObject.transform.SetParent(transform);
 
-        isGrabbing = true;
-    }
+    //     isGrabbing = true;
+    // }
 
-    void ReleaseObject()
-    {
-        if (grabbedObject != null)
-        {
-            grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-            grabbedObject.transform.SetParent(null);
-            grabbedObject = null;
+    // void ReleaseObject()
+    // {
+    //     if (grabbedObject != null)
+    //     {
+    //         grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+    //         grabbedObject.transform.SetParent(null);
+    //         grabbedObject = null;
 
-            isGrabbing = false;
-        }
-    }
+    //         isGrabbing = false;
+    //     }
+    // }
 
     void RemoveInteractableObject(GameObject obj)
     {
