@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "391569289617",
+    "project_id": "fyp-teledent-v18",
+    "storage_bucket": "fyp-teledent-v18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391569289617:android:75201d27f46ebdb07d2a30",
+        "android_client_info": {
+          "package_name": "com.SS.FYP_TeleDent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4WDS7urmaWvAIh4R_HvfJRKgfxS9qo6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
