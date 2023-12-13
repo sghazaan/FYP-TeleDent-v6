@@ -12052,7 +12052,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.03}
+  - {x: 0, y: 0, z: 0.005}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -12061,7 +12061,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.014282227
+        value: 0.0064697266
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -17604,7 +17604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2398393669862559006}
   m_LocalRotation: {x: 0.7124246, y: 0.45571497, z: 0.310398, w: 0.43408316}
-  m_LocalPosition: {x: 8.502588, y: 1.4120306, z: -31.567478}
+  m_LocalPosition: {x: 5.09, y: 4.5, z: -31.567478}
   m_LocalScale: {x: 24.883049, y: 69.071754, z: 326.39178}
   m_Children: []
   m_Father: {fileID: 5441797204360641156}
@@ -19404,7 +19404,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 2
@@ -19451,7 +19451,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0.1}
+  - {x: 0, y: 0, z: 0.05}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -19459,8 +19459,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0067320997
-        value: 0.04553604
+        time: 0.013466948
+        value: 0.0064735413
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -29579,7 +29579,7 @@ Transform:
   m_GameObject: {fileID: 4748074975170315988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.13, y: 0.088, z: -6.387}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17

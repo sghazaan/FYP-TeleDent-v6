@@ -13,7 +13,7 @@ public class Controller : MonoBehaviour
     void Update()
     {
         transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
-        Vector3 targetPosition = Player.transform.position + new Vector3(0.5f, -0.1f, 0.8f);
+        Vector3 targetPosition = Player.transform.position + new Vector3(0.5f, -0.1f, 0.4f);
         transform.position = targetPosition;
 
         if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
