@@ -8,29 +8,22 @@ public class Controller : MonoBehaviour
     private bool isGrabbing = false;
     public List<GameObject> interactableObjects; // List to hold interactable objects
 
-    public GameObject Player;
+    public GameObject PlayerObj;
 
     void Update()
     {
         transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
-        Vector3 targetPosition = Player.transform.position + new Vector3(0.5f, -0.1f, 0.4f);
+        Vector3 targetPosition = PlayerObj.transform.position + new Vector3(0.5f, -0.1f, 0.4f);
         transform.position = targetPosition;
 
         if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
         {
             TryGrabObject();
 
-            // if (!isGrabbing)
-            // {
-            //     TryGrabObject();
-            // }
         }
         else
         {
-            // if (isGrabbing)
-            // {
-            //     ReleaseObject();
-            // }
+
         }
     }
 
@@ -39,11 +32,6 @@ public class Controller : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            // if (hit.collider.CompareTag("Interactable"))
-            // {
-            //     GrabObject(hit.collider.gameObject);
-            // }
-
             if (hit.collider.CompareTag("Tartar"))
             {
                 RemoveInteractableObject(hit.collider.gameObject);
@@ -51,26 +39,6 @@ public class Controller : MonoBehaviour
         }
     }
 
-    // void GrabObject(GameObject obj)
-    // {
-    //     grabbedObject = obj;
-    //     grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-    //     grabbedObject.transform.SetParent(transform);
-
-    //     isGrabbing = true;
-    // }
-
-    // void ReleaseObject()
-    // {
-    //     if (grabbedObject != null)
-    //     {
-    //         grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-    //         grabbedObject.transform.SetParent(null);
-    //         grabbedObject = null;
-
-    //         isGrabbing = false;
-    //     }
-    // }
 
     void RemoveInteractableObject(GameObject obj)
     {

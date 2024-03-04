@@ -9,17 +9,18 @@ public class Player : MonoBehaviour
     public GameObject OVRCamera;
     public float speed = 5f;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        joystick = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+          if (Application.platform == RuntimePlatform.WindowsPlayer ||
+           Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            // Handle input for Windows (e.g., keyboard input)
+            joystick = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        }
+        else{
+            joystick = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+        }
         transform.eulerAngles = new Vector3(0, centerCamera.transform.localEulerAngles.y, 0);
         transform.Translate(Vector3.forward * speed * joystick.y * Time.deltaTime);
         transform.Translate(Vector3.right * speed * joystick.x * Time.deltaTime);

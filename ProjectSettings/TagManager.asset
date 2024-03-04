@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Interactable
   - Writeable
+  - Tartar
+  - decayed
   layers:
   - Default
   - TransparentFX

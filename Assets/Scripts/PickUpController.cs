@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//need to change it such that all tools are in a list and they are selected in a cycle
 public class PickUpController : MonoBehaviour
 {
      public MonoBehaviour controller;
     public Rigidbody rb;
-    public BoxCollider coll;
+    public MeshCollider coll;
     public Transform player, toolContainer, fpsCam;
 
     public Transform tray;
@@ -106,12 +107,7 @@ public class PickUpController : MonoBehaviour
     // Set the tool's position to the target position
     transform.position = targetPosition;
 
-        //AddForce
-        // rb.AddForce(fpsCam.forward * dropForwardForce, ForceMode.Impulse);
-        // rb.AddForce(fpsCam.up * dropUpwardForce, ForceMode.Impulse);
-        //Add random rotation
-        // float random = Random.Range(-1f, 1f);
-        // rb.AddTorque(new Vector3(random, random, random) * 10);
+       
 
         //Disable script
         controller.enabled = false;
