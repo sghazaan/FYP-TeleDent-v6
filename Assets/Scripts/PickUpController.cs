@@ -2,114 +2,133 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//need to change it such that all tools are in a list and they are selected in a cycle
 public class PickUpController : MonoBehaviour
 {
-     public MonoBehaviour controller;
-    public Rigidbody rb;
-    public MeshCollider coll;
-    public Transform player, toolContainer, fpsCam;
+    public Transform toolContainer;
+    public GameObject trayAndTools;
+    public MonoBehaviour controller;
 
-    public Transform tray;
+    public const int totalCountOfTools = 5; // Total count of tools
+    public static int currentToolIndex = 0; // Static variable to hold the index of the currently selected tool
+    public static bool[] isToolEquipped = new bool[totalCountOfTools]; // Array to track whether each tool is equipped
+    public static int[] myToolIndex = new int[totalCountOfTools]; // Array to hold the index of each tool
 
-    public float pickUpRange;
-    public float dropForwardForce, dropUpwardForce;
+    public static List<Transform> tools = new List<Transform>(); // List to hold all the tools
 
-    public bool equipped;
-    public static bool slotFull;
-
-    private void Start()
+    public void Start()
     {
-        //Setup
-        if (!equipped)
+        // Initialize arrays
+        for (int i = 0; i < totalCountOfTools; i++)
         {
-            controller.enabled = false;
-            rb.isKinematic = false;
-            coll.isTrigger = false;
+            isToolEquipped[i] = false; // None of the tools are initially equipped
+            myToolIndex[i] = -1; // Set default value
         }
-        if (equipped)
-        {
-            controller.enabled = true;
-            rb.isKinematic = true;
-            coll.isTrigger = true;
-            slotFull = true;
-        }
-    }
 
-    private void Update()
-    {
-
-        // Check if the back button (Button Two) is pressed
-        if (OVRInput.GetDown(OVRInput.Button.Two))
+        // Populate the list of tools from the "trayAndTools" GameObject
+        foreach (Transform child in trayAndTools.transform)
         {
-            // If equipped, drop; if not equipped, pick up
-            if (equipped)
+            if (child.CompareTag("Tool"))
             {
-                Drop();
-            }
-            else
-            {
-                // Check if player is in range
-                Vector3 distanceToPlayerOculus = player.position - transform.position;
-                if (distanceToPlayerOculus.magnitude <= pickUpRange && !slotFull)
+                tools.Add(child);
+
+                // Set myToolIndex based on the name of the tool
+                switch (child.name)
                 {
-                    PickUp();
+                    case "syringe":
+                        myToolIndex[0] = 0;
+                        Debug.Log("0 setup");
+                        break;
+                    case "drill":
+                        myToolIndex[1] = 1;
+                        Debug.Log("1 setup");
+                        break;
+                    case "sickle":
+                        myToolIndex[2] = 2;
+                        Debug.Log("2 setup");
+                        break;
+                    case "PinzaBiangulada":
+                        myToolIndex[3] = 3;
+                        Debug.Log("3 setup");
+                        break;
+                    case "picker":
+                        myToolIndex[4] = 4;
+                        Debug.Log("4 setup");
+                        break;
+                    default:
+                        break;
                 }
             }
         }
-
-        //Check if player is in range and "E" is pressed
-        Vector3 distanceToPlayer = player.position - transform.position;
-        if (!equipped && distanceToPlayer.magnitude <= pickUpRange && Input.GetKeyDown(KeyCode.E) && !slotFull) PickUp();
-
-        //Drop if equipped and "Q" is pressed
-        if (equipped && Input.GetKeyDown(KeyCode.Q)) Drop();
     }
 
-    private void PickUp()
+    public void Update()
     {
-        equipped = true;
-        slotFull = true;
-
-        //Make weapon a child of the camera and move it to default position
-        transform.SetParent(toolContainer);
-        transform.localPosition = new Vector3(0f, -0.3f, 0.22f);
-        // transform.localRotation = Quaternion.Euler(Vector3.zero);
-        // transform.localScale = Vector3.one;
-
-        //Make Rigidbody kinematic and BoxCollider a trigger
-        rb.isKinematic = true;
-        coll.isTrigger = true;
-
-        //Enable script
-        controller.enabled = true;
+        // Check if the back button (Button Two) is pressed
+        // if (OVRInput.GetDown(OVRInput.Button.Two))
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Check if the tool is already equipped
+            if (!isToolEquipped[currentToolIndex])
+            {
+                Drop(); // Drop the currently equipped tool
+                Debug.Log("Dropped: " + myToolIndex[currentToolIndex] + ":" + currentToolIndex);
+                CycleTool(); // Cycle to the next tool
+                PickUp(); // Pick up the new current tool
+                Debug.Log("Picked: " + myToolIndex[currentToolIndex] + ":" + currentToolIndex);
+            }
+        }
     }
 
-    private void Drop()
+    public void CycleTool()
     {
-        equipped = false;
-        slotFull = false;
+        // Increment the current tool index and wrap around if needed
+        currentToolIndex = (currentToolIndex + 1) % totalCountOfTools;
+    }
 
-        //Set parent to null
-        transform.SetParent(null);
-           // Set player's Rigidbody velocity to zero to stop its movement
-        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        //Make Rigidbody not kinematic and BoxCollider normal
-        rb.isKinematic = false;
-        coll.isTrigger = false;
+    public void PickUp()
+    {
+        if (myToolIndex[currentToolIndex] >= 0 && myToolIndex[currentToolIndex] < tools.Count)
+        {
+            Transform selectedTool = tools[myToolIndex[currentToolIndex]];
 
-        //Gun carries momentum of player
-        rb.velocity = Vector3.zero;
+            // Make sure the tool is not already equipped
+            if (!isToolEquipped[currentToolIndex])
+            {
+                // Make the selected tool a child of the "toolsContainer" GameObject
+                selectedTool.SetParent(toolContainer);
 
-       // Get the target position (e.g., anotherObject's position with a y-offset)
-    Vector3 targetPosition = tray.position + new Vector3(0f, 0.3f, 0f);
+                // Set the position and rotation of the selected tool
+                selectedTool.localPosition = Vector3.zero;
+                selectedTool.localRotation = Quaternion.identity; // Reset rotation
+                controller.enabled = true;
 
-    // Set the tool's position to the target position
-    transform.position = targetPosition;
+                // Mark the tool as equipped
+                isToolEquipped[currentToolIndex] = true;
+            }
+        }
+    }
 
-       
+    public void Drop()
+    {
+        if (currentToolIndex != -1 && currentToolIndex < tools.Count && myToolIndex[currentToolIndex] != -1)
+        {
+            // Get the currently equipped tool
+            Transform equippedTool = tools[myToolIndex[currentToolIndex]];
 
-        //Disable script
-        controller.enabled = false;
+            // Make sure the tool is equipped
+            if (isToolEquipped[currentToolIndex])
+            {
+                // Make the equipped tool a child of the "trayAndTools" GameObject
+                equippedTool.SetParent(trayAndTools.transform);
+
+                // Set the position of the equipped tool
+                equippedTool.localPosition = trayAndTools.transform.position;
+
+                controller.enabled = false;
+
+                // Mark the tool as unequipped
+                isToolEquipped[currentToolIndex] = false;
+            }
+        }
     }
 }

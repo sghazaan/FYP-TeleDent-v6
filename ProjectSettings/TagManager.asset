@@ -8,6 +8,8 @@ TagManager:
   - Writeable
   - Tartar
   - decayed
+  - Tool
+  - gum
   layers:
   - Default
   - TransparentFX
