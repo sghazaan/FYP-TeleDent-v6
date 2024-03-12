@@ -1122,8 +1122,9 @@ GameObject:
   - component: {fileID: 391423381}
   - component: {fileID: 391423379}
   - component: {fileID: 391423380}
+  - component: {fileID: 391423383}
   m_Layer: 0
-  m_Name: Gum1
+  m_Name: Gum-LT-11
   m_TagString: gum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1169,7 +1170,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &391423381
@@ -1219,6 +1220,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391423377}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &391423383
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391423377}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &397761739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,8 +2046,9 @@ GameObject:
   - component: {fileID: 747902595}
   - component: {fileID: 747902593}
   - component: {fileID: 747902594}
+  - component: {fileID: 747902597}
   m_Layer: 0
-  m_Name: Gum2
+  m_Name: Gum-LT-8
   m_TagString: gum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2076,7 +2094,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &747902595
@@ -2126,6 +2144,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747902591}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &747902597
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747902591}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &802246982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3928,8 +3962,9 @@ GameObject:
   - component: {fileID: 1940538872}
   - component: {fileID: 1940538870}
   - component: {fileID: 1940538871}
+  - component: {fileID: 1940538874}
   m_Layer: 0
-  m_Name: Gum3
+  m_Name: Gum-LT-14
   m_TagString: gum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3975,7 +4010,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1940538872
@@ -4025,6 +4060,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940538868}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1940538874
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940538868}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2002577799
 GameObject:
   m_ObjectHideFlags: 0
@@ -16426,8 +16477,8 @@ GameObject:
   - component: {fileID: 3537834385642790683}
   - component: {fileID: 3537834385642790686}
   - component: {fileID: 3537834385642790685}
-  - component: {fileID: 3537834385642790687}
   - component: {fileID: 3537834385642790688}
+  - component: {fileID: 3537834385642790687}
   m_Layer: 0
   m_Name: syringe
   m_TagString: Tool
@@ -16525,6 +16576,7 @@ MonoBehaviour:
   src: {fileID: 2017185506}
   syringeSound: {fileID: 8300000, guid: e5e263abc65b395459f33f1463cfcd03, type: 3}
   speed: 0.15
+  swellingAmount: 1.2
 --- !u!114 &3537834385642790687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16534,10 +16586,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3537834385642790680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd8997eb9aeae040a9624fab1c03e52, type: 3}
+  m_Script: {fileID: 11500000, guid: ec65e2a954f769142bacbfde7c889d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionText: {fileID: 561583720}
+  collisionText: {fileID: 386009308}
 --- !u!114 &3537834385642790688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30944,7 +30996,7 @@ Transform:
   m_GameObject: {fileID: 3537834385642790680}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
   m_LocalPosition: {x: 9, y: 1.1400003, z: -25.860004}
-  m_LocalScale: {x: 2, y: 3.5, z: 1.7}
+  m_LocalScale: {x: 2.6, y: 2.6, z: 1.1}
   m_Children: []
   m_Father: {fileID: 5441797204360641156}
   m_RootOrder: 1

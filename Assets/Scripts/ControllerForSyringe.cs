@@ -10,6 +10,8 @@ public class ControllerForSyringe : MonoBehaviour
     public AudioClip syringeSound;
     // public GameObject centerCamera;
     public float speed;
+    public float swellingAmount = 2f; // Adjust this value to control the amount of swelling
+
 
     void Start(){
         Vector3 targetPosition = PlayerObj.transform.position + new Vector3(0.12f, 0f, 0.07f);
@@ -42,7 +44,14 @@ public class ControllerForSyringe : MonoBehaviour
             if (collider.CompareTag("gum"))
             {
                 if(collider.name == "Gum1"){
-                    //textbox linking here
+                    //code to change color of the collideed object
+                    //FF0005
+                // Swell the collided object
+                SwellObject(collider.gameObject);
+
+                 // Change color of the collided object
+                ChangeObjectColor(collider.gameObject);
+
                 }
             }
         }
@@ -50,6 +59,31 @@ public class ControllerForSyringe : MonoBehaviour
     void PlaySyringeAudio(){
         src.clip = syringeSound;
         src.Play();
+    }
+
+     void SwellObject(GameObject obj)
+    {
+        // Get the current scale of the object
+        Vector3 originalScale = obj.transform.localScale;
+
+        // Calculate the swollen scale
+        Vector3 swollenScale = originalScale * swellingAmount;
+
+        // Apply the swollen scale to the object
+        obj.transform.localScale = swollenScale;
+    }
+
+     void ChangeObjectColor(GameObject obj)
+    {
+        // Get the Renderer component of the object
+        Renderer renderer = obj.GetComponent<Renderer>();
+
+        // Check if the Renderer component exists
+        if (renderer != null)
+        {
+            // Set the material color of the object to hexadecimal color code FF0005 (bright red)
+            renderer.material.color = new Color(1f, 0f, 0.019f); // Corresponds to FF0005 in hexadecimal
+        }
     }
    
 }

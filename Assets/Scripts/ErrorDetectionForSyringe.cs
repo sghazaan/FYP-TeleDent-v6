@@ -17,11 +17,11 @@ public class ErrorDetectionForSyringe : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collider.CompareTag("gum")){
+        if (collision.gameObject.CompareTag("gum"))
 
        
         // Check if the collision is with the wrong object
-        if (collision.gameObject.name != "Gum-LT-11" && collision.gameObject != gameObject )
+        if (collision.gameObject.name != "Gum-LT-11") //&& collision.gameObject != gameObject )
         {
             // Display the error text
             errorText.text = "Error: wrong gum" + collision.gameObject.name;
@@ -35,7 +35,7 @@ public class ErrorDetectionForSyringe : MonoBehaviour
             StartCoroutine(HideObjectsAfterDelay(3f));
         }
         }
-    }
+    
 
     IEnumerator HideObjectsAfterDelay(float delay)
     {
