@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FixedCameraScene.unity
     guid: 51cb4a7835f4d7e4c978670023f715f6
+  - enabled: 0
+    path: Assets/Scenes/ClinicScene.unity
+    guid: fea91e1f6cfc0d34294fe65ebf67ceea
   m_configObjects: {}

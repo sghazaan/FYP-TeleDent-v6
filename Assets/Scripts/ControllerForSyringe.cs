@@ -6,16 +6,15 @@ public class ControllerForSyringe : MonoBehaviour
 {
     public List<GameObject> interactableObjects; // List to hold interactable objects
     public GameObject PlayerObj;
-    public AudioSource src;
-    public AudioClip syringeSound;
+    public AudioSource audiosource;
     // public GameObject centerCamera;
     public float speed;
     public float swellingAmount = 2f; // Adjust this value to control the amount of swelling
 
 
     void Start(){
-        Vector3 targetPosition = PlayerObj.transform.position + new Vector3(0.12f, 0f, 0.07f);
-        transform.position = targetPosition;
+        // Vector3 targetPosition = PlayerObj.transform.position + new Vector3(0.12f, 0f, 0.07f);
+        // transform.position = targetPosition;
 
     }
     void Update()
@@ -57,8 +56,7 @@ public class ControllerForSyringe : MonoBehaviour
         }
     }
     void PlaySyringeAudio(){
-        src.clip = syringeSound;
-        src.Play();
+        audiosource.Play();
     }
 
      void SwellObject(GameObject obj)

@@ -5,9 +5,8 @@ using UnityEngine;
 public class ControllerForDrill : MonoBehaviour
 {
     public List<GameObject> interactableObjects; // List to hold interactable objects
-    public GameObject PlayerObj;
+    // public GameObject PlayerObj;
     public AudioSource src;
-    public AudioClip drillSound;
     
 
     // public TextMeshPro collisionText;
@@ -54,7 +53,6 @@ public class ControllerForDrill : MonoBehaviour
         Destroy(particle);
     }
     void PlayDrillAudio(){
-        src.clip = drillSound;
         src.Play();
     }
     

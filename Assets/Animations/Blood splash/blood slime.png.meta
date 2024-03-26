@@ -1,0 +1,1340 @@
+fileFormatVersion: 2
+guid: 494348826b011fa45a47144da393a793
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7235334436077655119
+    second: blood slime_0
+  - first:
+      213: 2563108756709617673
+    second: blood slime_1
+  - first:
+      213: -9174195903127397505
+    second: blood slime_2
+  - first:
+      213: -1913723259409062486
+    second: blood slime_3
+  - first:
+      213: 2844184101747010831
+    second: blood slime_4
+  - first:
+      213: 344590968077123081
+    second: blood slime_5
+  - first:
+      213: -6697237297591859186
+    second: blood slime_6
+  - first:
+      213: -8366427612686003250
+    second: blood slime_7
+  - first:
+      213: 4792603698170457335
+    second: blood slime_8
+  - first:
+      213: -1186816585618508263
+    second: blood slime_9
+  - first:
+      213: -1619051179783822096
+    second: blood slime_10
+  - first:
+      213: 3602628476332476181
+    second: blood slime_11
+  - first:
+      213: -467467002603641780
+    second: blood slime_12
+  - first:
+      213: 4889040534824165069
+    second: blood slime_13
+  - first:
+      213: -8788596444785422081
+    second: blood slime_14
+  - first:
+      213: 5526466032113653237
+    second: blood slime_15
+  - first:
+      213: -743618793021563417
+    second: blood slime_16
+  - first:
+      213: 7616298874780187875
+    second: blood slime_17
+  - first:
+      213: 3856180097412426157
+    second: blood slime_18
+  - first:
+      213: -680152011329400159
+    second: blood slime_19
+  - first:
+      213: 3030893392472462078
+    second: blood slime_20
+  - first:
+      213: 1992184086189850021
+    second: blood slime_21
+  - first:
+      213: -1514852820542350317
+    second: blood slime_22
+  - first:
+      213: 5347275737318068189
+    second: blood slime_23
+  - first:
+      213: -4780348067619335815
+    second: blood slime_24
+  - first:
+      213: -2368885189951803634
+    second: blood slime_25
+  - first:
+      213: -4385789183851287240
+    second: blood slime_26
+  - first:
+      213: 3131926427443028542
+    second: blood slime_27
+  - first:
+      213: -5100387209738171552
+    second: blood slime_28
+  - first:
+      213: -4867646307038560774
+    second: blood slime_29
+  - first:
+      213: -475326404426155411
+    second: blood slime_30
+  - first:
+      213: -4294540884893044627
+    second: blood slime_31
+  - first:
+      213: 5342878632061107836
+    second: blood slime_32
+  - first:
+      213: -2294429238899338682
+    second: blood slime_33
+  - first:
+      213: -5167415776490931407
+    second: blood slime_34
+  - first:
+      213: -3088396558413512380
+    second: blood slime_35
+  - first:
+      213: -1405153854186650700
+    second: blood slime_36
+  - first:
+      213: 4649807735909812287
+    second: blood slime_37
+  - first:
+      213: 1990812089173074309
+    second: blood slime_38
+  - first:
+      213: 3391358963682238037
+    second: blood slime_39
+  - first:
+      213: 7816913334411610440
+    second: blood slime_40
+  - first:
+      213: 8953455236497441112
+    second: blood slime_41
+  - first:
+      213: -7583780130846794606
+    second: blood slime_42
+  - first:
+      213: 336514444430614218
+    second: blood slime_43
+  - first:
+      213: 310886538784857454
+    second: blood slime_44
+  - first:
+      213: 5242005980468471670
+    second: blood slime_45
+  - first:
+      213: 3186500219157875327
+    second: blood slime_46
+  - first:
+      213: -6558470178458410916
+    second: blood slime_47
+  - first:
+      213: 5578576162350121214
+    second: blood slime_48
+  - first:
+      213: -705234274282104163
+    second: blood slime_49
+  - first:
+      213: -4763513510813648566
+    second: blood slime_50
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blood slime_0
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1733
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bba0723aade69b90800000000000000
+      internalID: -7235334436077655119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_1
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 1733
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900be5495ddf19320800000000000000
+      internalID: 2563108756709617673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_2
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1733
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b5f3ede65bea080800000000000000
+      internalID: -9174195903127397505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_3
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1733
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5258cb5d61175e0800000000000000
+      internalID: -1913723259409062486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_4
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1733
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0da1741f52987720800000000000000
+      internalID: 2844184101747010831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_5
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 1733
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e7b05e8ab38c400800000000000000
+      internalID: 344590968077123081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_6
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 1733
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e084a8c4922ae03a0800000000000000
+      internalID: -6697237297591859186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_7
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1478
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3d4dad96a74eb80800000000000000
+      internalID: -8366427612686003250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_8
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1478
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc6ca2dbafb28240800000000000000
+      internalID: 4792603698170457335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_9
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 1478
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916baa87a94978fe0800000000000000
+      internalID: -1186816585618508263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_10
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 1478
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4eec3b789f789e0800000000000000
+      internalID: -1619051179783822096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1223
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517018df28b1ff130800000000000000
+      internalID: 3602628476332476181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_12
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1223
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44e795ec393389f0800000000000000
+      internalID: -467467002603641780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_13
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 1223
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce1ea2967c59d340800000000000000
+      internalID: 4889040534824165069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_14
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1223
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0dd42f812a80680800000000000000
+      internalID: -8788596444785422081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_15
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1223
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f595636393f1bc40800000000000000
+      internalID: 5526466032113653237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_16
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1223
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed15a9c5a22ea5f0800000000000000
+      internalID: -743618793021563417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_17
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 1223
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ecfa76497782b960800000000000000
+      internalID: 7616298874780187875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_18
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 1223
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9e2302e57e38530800000000000000
+      internalID: 3856180097412426157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 968
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2917b695d9f86f0800000000000000
+      internalID: -680152011329400159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_20
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 968
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2566a6b75ef0a20800000000000000
+      internalID: 3030893392472462078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_21
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 968
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad38801fd8a5ab10800000000000000
+      internalID: 1992184086189850021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_22
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 968
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c1390c2692afae0800000000000000
+      internalID: -1514852820542350317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_23
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 968
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf88e6b3f6553a40800000000000000
+      internalID: 5347275737318068189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_24
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 968
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97113d682cac8adb0800000000000000
+      internalID: -4780348067619335815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_25
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 968
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f2d3b7877002fd0800000000000000
+      internalID: -2368885189951803634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_26
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 968
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d2bc469fb8223c0800000000000000
+      internalID: -4385789183851287240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 713
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32666afd76d67b20800000000000000
+      internalID: 3131926427443028542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_28
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 713
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b4c921bd8c739b0800000000000000
+      internalID: -5100387209738171552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_29
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 713
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd79b04975a27cb0800000000000000
+      internalID: -4867646307038560774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_30
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 713
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ab0df472d4769f0800000000000000
+      internalID: -475326404426155411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_31
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 713
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60fe8291d9b664c0800000000000000
+      internalID: -4294540884893044627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_32
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 713
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ef60edec7b52a40800000000000000
+      internalID: 5342878632061107836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_33
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 713
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642922d73cc8820e0800000000000000
+      internalID: -2294429238899338682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_34
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 713
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b328bbab6a948b0800000000000000
+      internalID: -5167415776490931407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 458
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441493271bfc325d0800000000000000
+      internalID: -3088396558413512380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_36
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 458
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b30f62b304ef7ce0800000000000000
+      internalID: -1405153854186650700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_37
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 458
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3884c4008f678040800000000000000
+      internalID: 4649807735909812287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_38
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 458
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581e6bd1c09c0ab10800000000000000
+      internalID: 1990812089173074309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_39
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 458
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55edd106207801f20800000000000000
+      internalID: 3391358963682238037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_40
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 458
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8494e9903414b7c60800000000000000
+      internalID: 7816913334411610440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_41
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 458
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8518ac3a910114c70800000000000000
+      internalID: 8953455236497441112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_42
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 458
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c163ec62001c690800000000000000
+      internalID: -7583780130846794606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 203
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace1312ba1a8ba400800000000000000
+      internalID: 336514444430614218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_44
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 203
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6dd8bde8ad705400800000000000000
+      internalID: 310886538784857454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_45
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 203
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677eb487aa85fb840800000000000000
+      internalID: 5242005980468471670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_46
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 203
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a0c970119b83c20800000000000000
+      internalID: 3186500219157875327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_47
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 203
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c506ef6fe12abf4a0800000000000000
+      internalID: -6558470178458410916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_48
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 203
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0475d86751b6d40800000000000000
+      internalID: 5578576162350121214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_49
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 203
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a1cfdf9218636f0800000000000000
+      internalID: -705234274282104163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood slime_50
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 203
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49bd2933b994edb0800000000000000
+      internalID: -4763513510813648566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 158367606d94a6444953c9548111a71e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

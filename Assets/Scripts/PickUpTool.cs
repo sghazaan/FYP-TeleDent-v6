@@ -15,7 +15,7 @@ public class PickUpTool : MonoBehaviour
     }    
     public void GetToStartingPoint(){
     selectedTool.SetParent(toolContainer);
-    selectedTool.localPosition = Vector3.zero;
+    selectedTool.localPosition = Vector3.zero + new Vector3(0f, -0.1f, 0.1f);
     selectedTool.localRotation = Quaternion.identity; // Reset rotation
     }
 }
