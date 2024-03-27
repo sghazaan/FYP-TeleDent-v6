@@ -39,7 +39,7 @@ public class ControllerForCarrier : MonoBehaviour
      void CheckForCollisions()
     {
         // Perform collision detection logic here
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.2f);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.05f);
         
         foreach (Collider collider in colliders)
         {

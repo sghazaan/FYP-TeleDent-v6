@@ -31,11 +31,12 @@ public class SwitchTools : MonoBehaviour
             nextTool.SetActive(true);
             Debug.Log("Next Index: " + nextIndex);
             Debug.Log("Next Tool: " + nextTool.name);
+            selectedTool.SetActive(false);
+
 
             // Set the parent of the currently selected tool back to trayAndTools
             selectedTool.transform.SetParent(trayAndTools.transform);
             selectedTool.transform.localPosition = Vector3.zero;
-            selectedTool.SetActive(false);
 
 
             // Set the parent of the next tool to toolsContainer
