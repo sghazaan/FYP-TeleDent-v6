@@ -8,6 +8,13 @@ public class SwitchTools : MonoBehaviour
     public GameObject toolsContainer;
     private GameObject selectedTool;
     private int currentIndex = 0;
+    public GameObject mainmenu;
+    public GameObject historyMenu;
+    public GameObject progressMenu;
+    public GameObject ovrcontrollerHand;
+    public GameObject camera;
+    public GameObject playerObj;
+    private Vector3 fixedCameraActualPos; 
 
     void Start()
     {
@@ -15,6 +22,7 @@ public class SwitchTools : MonoBehaviour
         selectedTool = trayAndTools.transform.GetChild(currentIndex).gameObject;
         selectedTool.transform.SetParent(toolsContainer.transform);
         selectedTool.transform.localPosition = Vector3.zero + new Vector3(0f, -0.15f, 0.25f);
+        fixedCameraActualPos = camera.transform.position;
     }
 
     void Update()
@@ -22,6 +30,19 @@ public class SwitchTools : MonoBehaviour
         // Check for button press on Oculus VR controller (Button Two)
         if (OVRInput.GetDown(OVRInput.Button.Two) || Input.GetKeyDown(KeyCode.E))
         {
+            if(!mainmenu.activeSelf && !historyMenu.activeSelf && !progressMenu.activeSelf)
+            {
+            Switch();
+            }
+        }
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryTouchpad))
+        {
+            OpenMainMenu();
+        }               
+}
+
+
+    void Switch(){
             Debug.Log("Current Index: " + currentIndex);
             Debug.Log("Current Tool: " + selectedTool.name);
 
@@ -41,12 +62,38 @@ public class SwitchTools : MonoBehaviour
 
             // Set the parent of the next tool to toolsContainer
             nextTool.transform.SetParent(toolsContainer.transform);
-            nextTool.transform.localPosition = Vector3.zero + new Vector3(0f, -0.1f, 0.1f);
+            nextTool.transform.localPosition = Vector3.zero + new Vector3(0f, -0.1f, 0.14f);
 
 
             // Update the selectedTool reference
             selectedTool = nextTool;
             currentIndex++;
-        }
+    }
+
+
+    void OpenMainMenu(){
+            if(!mainmenu.activeSelf){
+                //activate
+                mainmenu.SetActive(true);
+                Vector3 currentPosition = camera.transform.position;
+                currentPosition.z -= 0.143f; 
+                camera.transform.position = currentPosition;
+                playerObj.transform.position = currentPosition;
+                // Toggle the activation state of the UI GameObject
+                selectedTool.SetActive(false);
+                // Set the parent of the currently selected tool back to trayAndTools
+                selectedTool.transform.SetParent(trayAndTools.transform);
+                selectedTool.transform.localPosition = Vector3.zero;
+                ovrcontrollerHand.SetActive(true);
+            } else{
+                //deactivate
+                mainmenu.SetActive(false);
+                ovrcontrollerHand.SetActive(false);
+                camera.transform.position = fixedCameraActualPos;
+                playerObj.transform.position = fixedCameraActualPos;
+            }
+
+        
+           
     }
 }

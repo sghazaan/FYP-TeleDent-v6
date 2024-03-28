@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
+using TMPro;
 
 public class ProgressTracker : MonoBehaviour
 {
+    public TextMeshProUGUI progressDescription;
     // List to store tool GameObjects
     public List<GameObject> tools = new List<GameObject>();
 
@@ -80,13 +82,14 @@ public class ProgressTracker : MonoBehaviour
 
             // Append information to the report
             reportBuilder.AppendLine($"Tool: {tool.name}");
-            reportBuilder.AppendLine($"Interactions: {interactions}");
-            reportBuilder.AppendLine($"Errors: {errors}");
+            // reportBuilder.AppendLine($"Interactions: {interactions}");
+            // reportBuilder.AppendLine($"Errors: {errors}");
             reportBuilder.AppendLine($"Accuracy: {accuracy:F2}%");
-            reportBuilder.AppendLine(); // Add an empty line for readability
+            // reportBuilder.AppendLine(); // Add an empty line for readability
         }
 
         // Print the progress report
         Debug.Log("Progress Report:\n" + reportBuilder.ToString());
+        progressDescription.text = reportBuilder.ToString();
     }
 }
