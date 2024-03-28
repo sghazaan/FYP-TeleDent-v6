@@ -8,6 +8,7 @@ public class ControllerForOVRController : MonoBehaviour
     public GameObject mainmenu;
     public GameObject historyMenu;
     public GameObject progressMenu;
+    public ProgressTracker progressTracker;
 
     private void Start()
     {
@@ -36,19 +37,22 @@ public class ControllerForOVRController : MonoBehaviour
                     }
                     else if (hit.collider.gameObject.name ==  "back-button")
                     {
-                        mainmenu.SetActive(true);
                         historyMenu.SetActive(false);
                         progressMenu.SetActive(false);
+                        mainmenu.SetActive(true);
+
                     }
                     else if (hit.collider.gameObject.name ==  "end-game-button"){
                         mainmenu.SetActive(false);
                         progressMenu.SetActive(true);
+                        progressTracker.PrintProgressReport();
 
                     }
                     else if (hit.collider.gameObject.name ==  "quit-game-button"){
                         progressMenu.SetActive(false);
                         mainmenu.SetActive(false);
                         historyMenu.SetActive(false);
+                        gameObject.SetActive(false);
                         //add stuff to end game
                     }
                      else{

@@ -13,6 +13,10 @@ public class ControllerForSyringe : MonoBehaviour
     public GameObject BloodSlimeStay;
     private float animationStartTime;
     private ProgressTracker progressTracker;
+    public AudioSource errorSoundSource;
+    public GameObject thumbsUp;
+    public GameObject thumbsDown;
+
 
 
 
@@ -38,7 +42,6 @@ public class ControllerForSyringe : MonoBehaviour
         transform.Translate(moveDirection * speed * Time.deltaTime);
         // StartCoroutine(PlayBloodAnimationCoroutine(3.0f));
         if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)){
-            PlaySyringeAudio();
             CheckForCollisions();
         }
         if (animationStartTime > 0) 
@@ -56,36 +59,28 @@ public class ControllerForSyringe : MonoBehaviour
      void CheckForCollisions()
     {
         // Perform collision detection logic here
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.05f);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.15f);
         
         foreach (Collider collider in colliders)
         {
                 if(collider.name == "Gum-LT-11"){
-                    //code to change color of the collideed object
-                    //FF0005
-                // Swell the collided object
-               // SwellObject(collider.gameObject);
-
-                 // Change color of the collided object
-                //ChangeObjectColor(collider.gameObject);
-                // Start the animation and wait for 3 seconds before stopping it
-
                 BloodAnimation(1);
+                PlaySyringeAudio();
                 animationStartTime = Time.time;
-                if (progressTracker != null)
-                {
-                    progressTracker.LogInteraction(gameObject, true);
-                }
-                } else{
-                 if (progressTracker != null)
-                {
+                progressTracker.LogInteraction(gameObject, true);
+                StartCoroutine(ActivateObjectForTime(thumbsUp, 2f));
+                }else{
+                    PlayErroneousSound();
                     progressTracker.LogInteraction(gameObject, false);
-                }
+                    StartCoroutine(ActivateObjectForTime(thumbsDown, 2f));
             }
         }
     }
     void PlaySyringeAudio(){
         audiosource.Play();
+    }
+    void PlayErroneousSound(){
+        errorSoundSource.Play();
     }
 
      void SwellObject(GameObject obj)
@@ -129,5 +124,28 @@ public class ControllerForSyringe : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         BloodAnimation(0);  // stop anim
     }
+
+     IEnumerator ActivateObjectForTime(GameObject obj, float duration)
+    {
+        // Activate the GameObject
+        obj.SetActive(true);
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(duration);
+
+        // Deactivate the GameObject after the specified duration
+        obj.SetActive(false);
+    }
    
 }
+
+
+
+ //code to change color of the collideed object
+                    //FF0005
+                // Swell the collided object
+               // SwellObject(collider.gameObject);
+
+                 // Change color of the collided object
+                //ChangeObjectColor(collider.gameObject);
+                // Start the animation and wait for 3 seconds before stopping it

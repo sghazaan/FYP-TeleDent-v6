@@ -21,6 +21,7 @@ public class ProgressTracker : MonoBehaviour
     // Score variables
     private int totalInteractions = 0;
     private int totalErrors = 0;
+    private float startTime;
 
     void Start()
     {
@@ -30,7 +31,11 @@ public class ProgressTracker : MonoBehaviour
             interactionCounts[tool] = 0;
             errorCounts[tool] = 0;
         }
+        startTime = Time.time;
+
     }
+
+  
 
     // Method to log tool interaction
     public void LogInteraction(GameObject tool, bool isSuccess)
@@ -69,27 +74,39 @@ public class ProgressTracker : MonoBehaviour
 
 
     // Method to print progress report
-    public void PrintProgressReport()
+public void PrintProgressReport()
+{
+    StringBuilder reportBuilder = new StringBuilder();
+
+    // Calculate session duration
+    float sessionDuration = Time.time - startTime;
+    int minutes = Mathf.FloorToInt(sessionDuration / 60f);
+    int seconds = Mathf.FloorToInt(sessionDuration % 60f);
+
+    // Append session duration to the report
+    reportBuilder.AppendLine($"Session Duration: {minutes}m {seconds}s");
+
+    // Iterate through each tool
+    for (int i = 0; i < tools.Count; i++)
     {
-        StringBuilder reportBuilder = new StringBuilder();
+        GameObject tool = tools[i];
+        int interactions = interactionCounts.ContainsKey(tool) ? interactionCounts[tool] : 0;
+        int errors = errorCounts.ContainsKey(tool) ? errorCounts[tool] : 0;
+        float accuracy = interactions > 0 ? ((float)(interactions - errors) / interactions) * 100f : 0f;
 
-        // Iterate through each tool
-        foreach (GameObject tool in tools)
-        {
-            int interactions = interactionCounts.ContainsKey(tool) ? interactionCounts[tool] : 0;
-            int errors = errorCounts.ContainsKey(tool) ? errorCounts[tool] : 0;
-            float accuracy = interactions > 0 ? ((float)(interactions - errors) / interactions) * 100f : 0f;
-
-            // Append information to the report
-            reportBuilder.AppendLine($"Tool: {tool.name}");
-            // reportBuilder.AppendLine($"Interactions: {interactions}");
-            // reportBuilder.AppendLine($"Errors: {errors}");
-            reportBuilder.AppendLine($"Accuracy: {accuracy:F2}%");
-            // reportBuilder.AppendLine(); // Add an empty line for readability
-        }
-
-        // Print the progress report
-        Debug.Log("Progress Report:\n" + reportBuilder.ToString());
-        progressDescription.text = reportBuilder.ToString();
+        // Append tool information to the report
+        reportBuilder.AppendLine($"Tool {i + 1}:");
+        reportBuilder.AppendLine($"{tool.name} interactions: {interactions}");
+        reportBuilder.AppendLine($"{tool.name} errors: {errors}");
+        reportBuilder.AppendLine($"{tool.name} accuracy: {accuracy:F2}%");
+        // Add an empty line for readability
+        reportBuilder.AppendLine();
     }
+
+    // Print the progress report
+    Debug.Log("Progress Report:\n" + reportBuilder.ToString());
+    progressDescription.text = reportBuilder.ToString();
+}
+
+   
 }

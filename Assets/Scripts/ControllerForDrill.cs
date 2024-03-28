@@ -6,16 +6,22 @@ public class ControllerForDrill : MonoBehaviour
 {
     public List<GameObject> interactableObjects; // List to hold interactable objects
     // public GameObject PlayerObj;
-    public AudioSource src;
+    public AudioSource drillSoundSource;
+    public AudioSource errorSoundSource;
     // public TextMeshPro collisionText;
     public float speed;
     public GameObject smokeAnim;
     private float animationStartTime;
-    void Start(){
-        // Vector3 targetPosition = PlayerObj.transform.position + new Vector3(0.12f, 0f, 1.1f);
-        // Vector3 targetPosition = PlayerObj.transform.position + new Vector3(0.32f, 0.3f, 1.1f);
-        // transform.position = targetPosition;
+    private ProgressTracker progressTracker;
+    public GameObject thumbsUp;
+    public GameObject thumbsDown;
 
+
+
+    void Start()
+    {
+        // Find the ProgressTracker instance in the scene
+        progressTracker = FindObjectOfType<ProgressTracker>();
     }
     void Update()
     {
@@ -29,7 +35,6 @@ public class ControllerForDrill : MonoBehaviour
         // Move the controller object
         transform.Translate(moveDirection * speed * Time.deltaTime);
         if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)){
-            PlayDrillAudio();
             CheckForCollisions();
         }
           if (animationStartTime > 0) 
@@ -44,15 +49,22 @@ public class ControllerForDrill : MonoBehaviour
      void CheckForCollisions()
     {
         // Perform collision detection logic here
-        Collider[] colliders = Physics.OverlapSphere(transform.position, /*adjust radius as needed*/ 0.05f);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, /*adjust radius as needed*/ 0.3f);
         
         foreach (Collider collider in colliders)
         {
             if (collider.CompareTag("decayed"))
             {
+                PlayDrillAudio();
                 DestroyDecayedParticle(collider.gameObject);
                 SmokeAnimation(1);
                 animationStartTime = Time.time;
+                progressTracker.LogInteraction(gameObject, true);
+                StartCoroutine(ActivateObjectForTime(thumbsUp, 2f));
+            }else{
+                PlayErroneousSound();
+                progressTracker.LogInteraction(gameObject, false);  
+                StartCoroutine(ActivateObjectForTime(thumbsDown, 2f));      
             }
         }
     }
@@ -62,7 +74,10 @@ public class ControllerForDrill : MonoBehaviour
         Destroy(particle);
     }
     void PlayDrillAudio(){
-        src.Play();
+        drillSoundSource.Play();
+    }
+    void PlayErroneousSound(){
+        errorSoundSource.Play();
     }
      void SmokeAnimation(int i){
         if(i==1){
@@ -73,6 +88,18 @@ public class ControllerForDrill : MonoBehaviour
             smokeAnim.SetActive(false);
         }
 
+    }
+
+    IEnumerator ActivateObjectForTime(GameObject obj, float duration)
+    {
+        // Activate the GameObject
+        obj.SetActive(true);
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(duration);
+
+        // Deactivate the GameObject after the specified duration
+        obj.SetActive(false);
     }
     
 }

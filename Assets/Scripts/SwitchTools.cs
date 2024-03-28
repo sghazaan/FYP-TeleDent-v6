@@ -15,6 +15,8 @@ public class SwitchTools : MonoBehaviour
     public GameObject camera;
     public GameObject playerObj;
     private Vector3 fixedCameraActualPos; 
+    public AudioSource switchSoundSource;
+
 
     void Start()
     {
@@ -43,6 +45,7 @@ public class SwitchTools : MonoBehaviour
 
 
     void Switch(){
+            switchSoundSource.Play();
             Debug.Log("Current Index: " + currentIndex);
             Debug.Log("Current Tool: " + selectedTool.name);
 
@@ -62,12 +65,14 @@ public class SwitchTools : MonoBehaviour
 
             // Set the parent of the next tool to toolsContainer
             nextTool.transform.SetParent(toolsContainer.transform);
-            nextTool.transform.localPosition = Vector3.zero + new Vector3(0f, -0.1f, 0.14f);
+            nextTool.transform.localPosition = Vector3.zero + new Vector3(0f, -0.07f, 0.18f);
 
 
             // Update the selectedTool reference
             selectedTool = nextTool;
             currentIndex++;
+
+
     }
 
 

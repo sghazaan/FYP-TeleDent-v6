@@ -1,48 +1,101 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class ErrorDetectionForDrill : MonoBehaviour
 {
-    public TextMeshProUGUI errorText;
-    public GameObject panel; // Declare a UI panel object
- 
+    public List<GameObject> interactableObjects; // List to hold interactable objects
+    public AudioSource drillSoundSource;
+    public AudioSource errorSoundSource;
+    public float speed;
+    public GameObject smokeAnim;
+    private float animationStartTime;
+    private ProgressTracker progressTracker;
+    private int destroyedParticlesCount = 0; // Counter to track the number of particles destroyed
 
     void Start()
     {
-        // Hide the error text initially
-        errorText.gameObject.SetActive(false);
-        panel.gameObject.SetActive(false);
+        // Find the ProgressTracker instance in the scene
+        progressTracker = FindObjectOfType<ProgressTracker>();
     }
 
-    void OnCollisionEnter(Collision collision)
+    void Update()
     {
-       
-        // Check if the collision is with the wrong object
-        if (collision.gameObject.name != "LT-11 cavity tooth" && collision.gameObject != gameObject )
+        transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
+
+        Vector2 touchpadInput;
+        touchpadInput = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+        Vector3 moveDirection = new Vector3(touchpadInput.x, 0f, touchpadInput.y);
+        transform.Translate(moveDirection * speed * Time.deltaTime);
+
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
         {
-            // Display the error text
-            errorText.text = "Error: wrong tooth" + collision.gameObject.name;
-            errorText.gameObject.SetActive(true);
-            panel.gameObject.SetActive(true);
+            CheckForCollisions();
+        }
 
-
-
-
-            // Start a coroutine to hide the error text and other objects after a delay
-            StartCoroutine(HideObjectsAfterDelay(3f));
+        if (animationStartTime > 0)
+        {
+            if (Time.time - animationStartTime >= 3)
+            {
+                SmokeAnimation(0);
+                animationStartTime = 0;
+            }
         }
     }
 
-    IEnumerator HideObjectsAfterDelay(float delay)
+    void CheckForCollisions()
     {
-        // Wait for the specified delay
-        yield return new WaitForSeconds(delay);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.3f);
 
-        // Hide the error text
-        errorText.gameObject.SetActive(false);
-        panel.gameObject.SetActive(false);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("decayed"))
+            {
+                PlayDrillAudio();
+                DestroyDecayedParticle(collider.gameObject);
+                SmokeAnimation(1);
+                animationStartTime = Time.time;
+                progressTracker.LogInteraction(gameObject, true);
+                // Increment the destroyed particles count
+                destroyedParticlesCount++;
+            }
+            else
+            {
+                PlayErroneousSound();
+                progressTracker.LogInteraction(gameObject, false);
+            }
+        }
     }
 
-    
+    void DestroyDecayedParticle(GameObject particle)
+    {
+        interactableObjects.Remove(particle);
+        Destroy(particle);
+    }
+
+    void PlayDrillAudio()
+    {
+        drillSoundSource.Play();
+    }
+
+    void PlayErroneousSound()
+    {
+        errorSoundSource.Play();
+    }
+
+    void SmokeAnimation(int i)
+    {
+        if (i == 1)
+        {
+            smokeAnim.SetActive(true);
+        }
+        else if (i == 0)
+        {
+            smokeAnim.SetActive(false);
+        }
+        else
+        {
+            smokeAnim.SetActive(false);
+        }
+    }
 }
