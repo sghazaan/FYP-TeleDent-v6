@@ -62,6 +62,7 @@ public class ControllerForDrill : MonoBehaviour
                 progressTracker.LogInteraction(gameObject, true);
                 StartCoroutine(ActivateObjectForTime(thumbsUp, 2f));
             }else{
+                
                 PlayErroneousSound();
                 progressTracker.LogInteraction(gameObject, false);  
                 StartCoroutine(ActivateObjectForTime(thumbsDown, 2f));      

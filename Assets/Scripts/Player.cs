@@ -22,8 +22,8 @@ public class Player : MonoBehaviour
             joystick = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
         }
         transform.eulerAngles = new Vector3(0, centerCamera.transform.localEulerAngles.y, 0);
-        transform.Translate(Vector3.forward * speed * joystick.y * Time.deltaTime);
-        transform.Translate(Vector3.right * speed * joystick.x * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * -joystick.y * Time.deltaTime);
+        transform.Translate(Vector3.right * speed * -joystick.x * Time.deltaTime);
 
          // Move OVRCamera position smoothly towards the target position
          OVRCamera.transform.position = Vector3.Lerp(OVRCamera.transform.position, transform.position, 10f * Time.deltaTime);    }

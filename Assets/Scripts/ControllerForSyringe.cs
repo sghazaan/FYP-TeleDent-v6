@@ -6,7 +6,6 @@ public class ControllerForSyringe : MonoBehaviour
 {
     public List<GameObject> interactableObjects; // List to hold interactable objects
     public AudioSource audiosource;
-    // public GameObject centerCamera;
     public float speed;
     public float swellingAmount = 0.1f; // Adjust this value to control the amount of swelling
     public GameObject BloodSlimeAnim;
@@ -17,8 +16,8 @@ public class ControllerForSyringe : MonoBehaviour
     public GameObject thumbsUp;
     public GameObject thumbsDown;
 
-
-
+    private bool isCoroutineRunning = false; // Flag to track if a coroutine is running
+    private bool canCheckCollisions = true; // Flag to control collision processing
 
     void Start()
     {
@@ -29,6 +28,7 @@ public class ControllerForSyringe : MonoBehaviour
             Debug.LogError("ProgressTracker not found in the scene!");
         }
     }
+
     void Update()
     {
         transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
@@ -40,93 +40,90 @@ public class ControllerForSyringe : MonoBehaviour
         Vector3 moveDirection = new Vector3(touchpadInput.x, 0f, touchpadInput.y);
         // Move the controller object
         transform.Translate(moveDirection * speed * Time.deltaTime);
-        // StartCoroutine(PlayBloodAnimationCoroutine(3.0f));
-        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)){
-            CheckForCollisions();
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
+        {
+            if (canCheckCollisions)
+            {
+                CheckForCollisions();
+            } 
         }
-        if (animationStartTime > 0) 
-        {   
+        if (animationStartTime > 0)
+        {
             if (Time.time - animationStartTime >= 3)
-             { 
-             BloodAnimation(0);
-            animationStartTime = 0; 
-             } 
-        } 
-        //  BloodAnimation(1);
-        // animationStartTime = Time.time;
-        
+            {
+                BloodAnimation(0);
+                animationStartTime = 0;
+            }
         }
-     void CheckForCollisions()
+    }
+
+    void CheckForCollisions()
     {
+        canCheckCollisions = false;
         // Perform collision detection logic here
         Collider[] colliders = Physics.OverlapSphere(transform.position, 0.15f);
-        
+
         foreach (Collider collider in colliders)
         {
-                if(collider.name == "Gum-LT-11"){
+           
+            if (collider.name == "Gum-LT-11")
+            {
+                if (!isCoroutineRunning) 
+                {
+                    StartCoroutine(ActivateObjectForTime(thumbsUp, 2f));
+                }
                 BloodAnimation(1);
                 PlaySyringeAudio();
                 animationStartTime = Time.time;
                 progressTracker.LogInteraction(gameObject, true);
-                StartCoroutine(ActivateObjectForTime(thumbsUp, 2f));
-                }else{
-                    PlayErroneousSound();
-                    progressTracker.LogInteraction(gameObject, false);
+            }
+            else
+            {
+                PlayErroneousSound();
+                progressTracker.LogInteraction(gameObject, false);
+                if (!isCoroutineRunning) // Check if coroutine is not already running
+                {
                     StartCoroutine(ActivateObjectForTime(thumbsDown, 2f));
+               }
             }
         }
+
+        StartCoroutine(DelayedCollisionCheck(2f));
     }
-    void PlaySyringeAudio(){
+
+    void PlaySyringeAudio()
+    {
         audiosource.Play();
     }
-    void PlayErroneousSound(){
+
+    void PlayErroneousSound()
+    {
         errorSoundSource.Play();
     }
 
-     void SwellObject(GameObject obj)
+    void BloodAnimation(int i)
     {
-        // Get the current scale of the object
-        Vector3 originalScale = obj.transform.localScale;
-
-        // Calculate the swollen scale
-        Vector3 swollenScale = originalScale * swellingAmount;
-
-        // Apply the swollen scale to the object
-        obj.transform.localScale = swollenScale;
-    }
-
-     void ChangeObjectColor(GameObject obj)
-    {
-        // Get the Renderer component of the object
-        Renderer renderer = obj.GetComponent<Renderer>();
-
-        // Check if the Renderer component exists
-        if (renderer != null)
+        if (i == 1)
         {
-            // Set the material color of the object to hexadecimal color code FF0005 (bright red)
-            renderer.material.color = new Color(0f, 0f, 0.0f); // Corresponds to FF0005 in hexadecimal
-        }
-    }
-    void BloodAnimation(int i){
-        if(i==1){
             BloodSlimeAnim.SetActive(true);
             BloodSlimeStay.SetActive(true);
-        } else if(i==0){
+        }
+        else if (i == 0)
+        {
             BloodSlimeAnim.SetActive(false);
-        } else{
+        }
+        else
+        {
             BloodSlimeAnim.SetActive(false);
         }
 
     }
-    IEnumerator PlayBloodAnimationCoroutine(float waitTime)
-    {
-        BloodAnimation(1);  // start anim
-        yield return new WaitForSeconds(waitTime);
-        BloodAnimation(0);  // stop anim
-    }
 
-     IEnumerator ActivateObjectForTime(GameObject obj, float duration)
+    IEnumerator ActivateObjectForTime(GameObject obj, float duration)
     {
+        // Set the coroutine flag to true
+        isCoroutineRunning = true;
+
         // Activate the GameObject
         obj.SetActive(true);
 
@@ -135,10 +132,17 @@ public class ControllerForSyringe : MonoBehaviour
 
         // Deactivate the GameObject after the specified duration
         obj.SetActive(false);
-    }
-   
-}
 
+        // Reset the coroutine flag to false
+        isCoroutineRunning = false;
+    }
+
+     IEnumerator DelayedCollisionCheck(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        canCheckCollisions = true;
+    }
+}
 
 
  //code to change color of the collideed object
