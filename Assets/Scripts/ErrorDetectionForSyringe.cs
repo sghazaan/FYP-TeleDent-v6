@@ -11,8 +11,8 @@ public class ErrorDetectionForSyringe : MonoBehaviour
     void Start()
     {
         // Hide the error text initially
-        errorText.gameObject.SetActive(false);
-        panel.gameObject.SetActive(false);
+        // errorText.gameObject.SetActive(false);
+        // panel.gameObject.SetActive(false);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -24,9 +24,9 @@ public class ErrorDetectionForSyringe : MonoBehaviour
         if (collision.gameObject.name != "Gum-LT-11") //&& collision.gameObject != gameObject )
         {
             // Display the error text
-            errorText.text = "Error: wrong gum" + collision.gameObject.name;
-            errorText.gameObject.SetActive(true);
-            panel.gameObject.SetActive(true);
+            // errorText.text = "Error: wrong gum" + collision.gameObject.name;
+            // errorText.gameObject.SetActive(true);
+            // panel.gameObject.SetActive(true);
 
 
 

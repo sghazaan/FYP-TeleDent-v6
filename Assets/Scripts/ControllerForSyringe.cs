@@ -77,14 +77,14 @@ public class ControllerForSyringe : MonoBehaviour
                 animationStartTime = Time.time;
                 progressTracker.LogInteraction(gameObject, true);
             }
-            else
+            else if(collider.CompareTag("wronggum"))
             {
-                PlayErroneousSound();
+            //     PlayErroneousSound();
                 progressTracker.LogInteraction(gameObject, false);
-                if (!isCoroutineRunning) // Check if coroutine is not already running
-                {
-                    StartCoroutine(ActivateObjectForTime(thumbsDown, 2f));
-               }
+            //     if (!isCoroutineRunning) // Check if coroutine is not already running
+            //     {
+            //         StartCoroutine(ActivateObjectForTime(thumbsDown, 2f));
+            //    }
             }
         }
 

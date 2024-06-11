@@ -10,10 +10,23 @@ public class ControllerForOVRController : MonoBehaviour
     public GameObject progressMenu;
     public ProgressTracker progressTracker;
 
+    private DynamicCase dynamicCase; // Reference to the DynamicCase script
+
+
     private void Start()
     {
-        Vector3 targetPosition = playerObj.transform.position + new Vector3(0.15f, -0.13f, 0.15f);
+        Vector3 targetPosition = playerObj.transform.position + new Vector3(0.15f, -0.13f, 0.08f);
         transform.position = targetPosition;
+
+         GameObject dynamicObject = GameObject.Find("DynamicFunction"); // Ensure this name matches the GameObject name
+        if (dynamicObject != null)
+        {
+            dynamicCase = dynamicObject.GetComponent<DynamicCase>();
+        }
+        else
+        {
+            Debug.LogWarning("DynamicFunction GameObject not found!");
+        }
     }
 
     private void Update()
@@ -54,6 +67,18 @@ public class ControllerForOVRController : MonoBehaviour
                         historyMenu.SetActive(false);
                         gameObject.SetActive(false);
                         //add stuff to end game
+                    }
+                    else if (hit.collider.gameObject.name == "dynamic-case-button")
+                    {
+                        // Call the RandomizeObjects function on the DynamicCase script
+                        if (dynamicCase != null)
+                        {
+                            dynamicCase.RandomizeObjects();
+                        }
+                        else
+                        {
+                            Debug.LogWarning("DynamicCase script is not assigned or not found!");
+                        }
                     }
                      else{
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,14 +60,14 @@ public class ControllerForCarrier : MonoBehaviour
                     StartCoroutine(ActivateObjectForTime(thumbsUp, 2f));
                 }
             }
-            else
+            else if(collider.CompareTag("wrongtooth"))
             {
-                PlayErroneousSound();
+                // PlayErroneousSound();
                 progressTracker.LogInteraction(gameObject, false);
-                if (!isCoroutineRunning) // Check if coroutine is not already running
-                {
-                    StartCoroutine(ActivateObjectForTime(thumbsDown, 2f));
-                }
+                // if (!isCoroutineRunning) // Check if coroutine is not already running
+                // {
+                //     StartCoroutine(ActivateObjectForTime(thumbsDown, 2f));
+                // }
             }
         }
     }

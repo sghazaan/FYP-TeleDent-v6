@@ -23,7 +23,7 @@ public class SwitchTools : MonoBehaviour
         // Initialize selected tool as the first child of trayAndTools
         selectedTool = trayAndTools.transform.GetChild(currentIndex).gameObject;
         selectedTool.transform.SetParent(toolsContainer.transform);
-        selectedTool.transform.localPosition = Vector3.zero + new Vector3(0f, -0.15f, 0.25f);
+        selectedTool.transform.localPosition = Vector3.zero + new Vector3(0f, -0.15f, 0.28f);
         fixedCameraActualPos = camera.transform.position;
     }
 
@@ -37,7 +37,7 @@ public class SwitchTools : MonoBehaviour
             Switch();
             }
         }
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryTouchpad))
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryTouchpad) || Input.GetKeyDown(KeyCode.M))
         {
             OpenMainMenu();
         }               
@@ -93,6 +93,8 @@ public class SwitchTools : MonoBehaviour
             } else{
                 //deactivate
                 mainmenu.SetActive(false);
+                historyMenu.SetActive(false);
+                progressMenu.SetActive(false);
                 ovrcontrollerHand.SetActive(false);
                 camera.transform.position = fixedCameraActualPos;
                 playerObj.transform.position = fixedCameraActualPos;
